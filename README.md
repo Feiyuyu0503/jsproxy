@@ -1,5 +1,5 @@
 
-# 更新
+# 更新(Fork后自用版）
 
 * 2019-07-24 [v0.1.0](https://github.com/EtherDream/jsproxy/blob/master/changelogs/v0.1.0.md) 发布，主要修复了缓存失效的问题。网络接口和之前版本不兼容，请及时更新服务端和 cfworker。
 
@@ -11,7 +11,7 @@
 # 安装
 
 ```bash
-curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash
+curl https://raw.githubusercontent.com/Feiyuyu0503/jsproxy/0.1.0/i.sh | bash
 ```
 
 * 自动安装目前只支持 Linux x64，并且需要 root 权限
@@ -28,7 +28,7 @@ curl https://raw.githubusercontent.com/EtherDream/jsproxy/0.1.0/i.sh | bash
 将域名 `example.com` 解析到服务器 IP，然后执行：
 
 ```bash
-curl https://raw.githubusercontent.com/EtherDream/jsproxy/master/i.sh | bash -s example.com
+curl https://raw.githubusercontent.com/Feiyuyu0503/jsproxy/master/i.sh | bash -s example.com
 ```
 
 访问: `https://example.com:8443`
@@ -43,7 +43,7 @@ iptables -A PREROUTING -t nat -p tcp --dport 443 -j REDIRECT --to-ports 8443
 iptables -A PREROUTING -t nat -p tcp --dport 80 -j REDIRECT --to-ports 8080
 ```
 
-同时修改 `www.conf` 中的 `:8443` 为 `:443`。
+//同时修改 `www.conf` 中的 `:8443` 为 `:443`。
 
 
 ### 使用 GitHub Pages 前端
