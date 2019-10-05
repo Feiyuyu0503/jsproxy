@@ -148,21 +148,6 @@ $url  'mysite';" >> server/allowed-sites.conf
 install() {
   cd $INSTALL_DIR
 
-  log "下载 nginx 程序 ..."
-  curl -O $BIN_URL/$OS/openresty-$OPENRESTY_VER.tar.gz
-  tar zxf openresty-$OPENRESTY_VER.tar.gz
-  rm -f openresty-$OPENRESTY_VER.tar.gz
-
-  local ngx_exe=$NGX_DIR/nginx/sbin/nginx
-  local ngx_ver=$($ngx_exe -v 2>&1)
-
-  if [[ "$ngx_ver" != *"nginx version:"* ]]; then
-    err "$ngx_exe 无法执行！尝试编译安装"
-    exit 1
-  fi
-  log "$ngx_ver"
-  log "nginx path: $NGX_DIR"
-
   log "下载代理服务 ..."
   curl -o jsproxy.tar.gz $ZIP_URL/$JSPROXY_VER
   tar zxf jsproxy.tar.gz
